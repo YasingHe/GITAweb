@@ -168,3 +168,5 @@ CKEDITOR_CONFIGS = {
 
 SIMPLEUI_LOGO = '/static/img/i.png'
 SIMPLEUI_HOME_INFO = True
+
+
