@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+<div class="banner"><div class="frame">
+<div class="child" style="background-image:url(/static/img/17.png);" tabindex="0">
+            <!-- <div class="text">
+                            </div> -->
+    		<div class="fz30">欢迎加入天河信息社！</div>
+{% for img in notice %}
+    </div><div class="child" style="background-image:url({{img.urls}});" >
+            <!-- <div class="text">
+                            </div> -->
+    		<div class="fz30">{{img.notices}}</div>
+    		
+        {% empty %}
+
+        {% endfor %}
+    		
+    		
+    		<span></span>
+            <a  href="https://news.pku.edu.cn/xwzh/58905515e25f49fda8b92e2d6de29ea2.htm" target="_blank"  class="a1"></a>
+            <a href="/close-up_pku2021.html" class="a2"></a>
+        </div></div>
+
+{% endblock %}

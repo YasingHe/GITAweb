@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}联系我们{% endblock %}
+
+{% block body %}
+<section>
+	<form method="post" action="contact">
+		<div class="fields">
+			<div class="field half">
+				<label for="name">称呼</label>
+				{{ message.name }}
+			</div>
+			<div class="field half">
+				<label for="email">QQ</label>
+				{{ message.qq }}
+			</div>
+			<div class="field">
+				<label for="message">留言</label>
+				{{ message.messages }}
+			</div>
+		</div>
+		<ul class="actions">
+			<li><input type="submit" value="提交" class="primary" /></li>
+			<li><input type="reset" value="取消" /></li>
+		</ul>
+		{% csrf_token %}
+	</form>
+</section>
+
+{% endblock %}

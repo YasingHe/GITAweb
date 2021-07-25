@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block body %}
+
+    <div id="main" class="alt">
+
+        <!-- One -->
+            <section id="one">
+                <div class="inner">
+                    <header class="major">
+                        <h1>{{ article.title }}</h1>
+                        <p>发布日期{{ article.data_added }}</p>
+                    </header>
+                    
+                    {{ article.content|safe }}
+                </div>
+            </section>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+
+{% block title %}天河信息社活动公告{% endblock %}
+
+{% block body %}
+<section id="banner" class="style2">
+    <div class="inner">
+        <span class="image">
+            <img src="static/img/8.jpg" alt="" />
+        </span>
+        <header class="major">
+            <h1>活动公告</h1>
+        </header>
+        <div class="content">
+            <p>Event announcement</p>
+        </div>
+    </div>
+</section>
+
+<div id="main">
+
+    
+
+    <!-- Two -->
+        <section id="two" class="spotlights">
+            {% for a in posts %}
+            <section>
+                <a href="article/{{a.id}}" class="image">
+                    <img src="{{ a.photos.url }}" alt="" data-position="center center" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <header class="major">
+                            <h3>{{ a.title }}</h3>
+                        </header>
+                        <div class="content">
+                            {% if a.ftitle == null %}
+                                <p></p>
+                            {% elif a.ftitle %}
+                                <p>{{ a.ftitle }}</p>
+                            {% endif %}
+                        </div>
+                        <p>{{ a|safe }}</p>
+                        <ul class="actions">
+                            <li><a href="article/{{a.id}}" class="button">继续阅读</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            {% empty %}
+                <p>还没有公告哦！</p>
+
+            {% endfor %}
+            
+
+</div>
+{% endblock %}
+

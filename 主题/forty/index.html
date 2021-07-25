@@ -1,0 +1,143 @@
+{% extends 'main/base.html' %}
+
+{% block title %}天河信息社{% endblock %}
+
+
+
+{% block body %}
+    <section id="banner" class="major">
+        <span class="image">
+            <img src="static/img/36.png" alt="" weight='100%' height="100%"/>
+        </span>
+        <div class="inner">
+            <header class="major">
+                <h1>Hello,这里是天河信息社!</h1>
+            </header>
+            <div class="content">
+                <p>一个充满技术的社团.<br />
+                    我们正等待你的加入.</p>
+                <ul class="actions">
+                    <li><a href="/about" class="button">了解更多</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one" class="tiles">
+            <article>
+                <span class="image">
+                    <img src="static/img/1.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="/notice" class="link">活动公告</a></h3>
+                    <p>Event announcement</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/img/6.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="/vedios" class="link">精彩视频</a></h3>
+                    <p>Wonderful video</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/img/7.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="/photos" class="link">精彩图片</a></h3>
+                    <p>Wonderful pictures</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/img/4.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="/about" class="link">关于天河信息社</a></h3>
+                    <p>about Galaxy Information Technology Association                    </p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/img/5.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="/contact" class="link">联系我们</a></h3>
+                    <p>contact us</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/img/40.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="http://dfyz.shiyan.gov.cn/" target="_blank" class="link">东高官网</a></h3>
+                    <p>dong feng high school</p>
+                </header>
+            </article>
+        </section>
+
+        
+
+    </div>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="inner">
+            <section>
+                <form method="post" >
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="name">称呼</label>
+                            {{ message.name }}
+                        </div>
+                        <div class="field half">
+                            <label for="email">QQ</label>
+                            {{ message.qq }}
+                        </div>
+                        <div class="field">
+                            <label for="message">留言</label>
+                            {{ message.messages }}
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="提交" class="primary" /></li>
+                        <li><input type="reset" value="取消" /></li>
+                    </ul>
+                    {% csrf_token %}
+                </form>
+            </section>
+            <section class="split">
+                <section>
+                    <div class="contact-method">
+                        <span class="icon solid alt fa-envelope"></span>
+                        <h3>Email</h3>
+                        <a href="#">2779025715@qq.com</a>
+                    </div>
+                </section>
+                <section>
+                    <div class="contact-method">
+                        <span class="icon solid alt fa-phone"></span>
+                        <h3>QQ</h3>
+                        <span>2779025715</span>
+                    </div>
+                </section>
+                <section>
+                    <div class="contact-method">
+                        <span class="icon solid alt fa-home"></span>
+                        <h3>Address</h3>
+                        <span>中华人民共和国<br />
+                            湖北省<br />
+                            十堰市张湾区广东路田沟巷东风高级中学</span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+{% endblock %}

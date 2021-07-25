@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- fall in love with HYJ -->
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="/static/img/i.ico">
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="/static/css/noscript.css" />
+    </noscript>
+    
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="/" class="logo"><strong>天河</strong> <span>信息社</span></a>
+            <nav>
+                <a href="#menu"></a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/notice">活动公告</a></li>
+                <li><a href="/vedios">精彩视频</a></li>
+                <li><a href="/photos">精彩图片</a></li>
+                <li><a href="/about">关于天河信息社</a></li>
+                <li><a href="/">联系我们</a></li>
+                <li><a href="http://dfyz.shiyan.gov.cn/" target="_blank">东高官网</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="/admin" class="button primary fit">登录</a></li>
+                
+            </ul>
+        </nav>
+
+        <!-- Banner -->
+        {% block body %}{% endblock %}
+
+        
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                
+                <ul class="copyright">
+                    <li>&copy; Django</li>
+                    <li>Design:<a href= <a href="tencent://message/?uin=1693476559&Site=Sambow&Menu=yes">橘猫♡백현의부인</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.scrolly.min.js"></script>
+    <script src="/static/js/jquery.scrollex.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
+
+

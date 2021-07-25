@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  
+  <div class="pattern-attachment-img lazyload" style="background-image: url({{article.photos.url}});" src="https://cdn.jsdelivr.net/gh/KaizynX/cdn/img/post-loading.gif" data-src="https://cdn.jsdelivr.net/gh/KaizynX/cdn/img/posts/Remote/cover.jpg">
+  </div>
+  
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">
+    远程桌面</h1>
+    <p class="entry-census">
+        <span>
+          
+            <img src="/static/img/at.jpg">
+          
+        </span>
+        <span>
+          <a href="https://kaizynx.github.io/">橘猫</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        {{ article.data_added }}<span class="bull">
+        ·</span>
+    
+  </header>
+</div>
+
+{{ article.content|safe }}
+
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "Xx1Weh5IAMSFQOepqxX8xxwL-gzGzoHsz",
+        appKey: "5UP6LsO4VrripLNX4RmvJka1",
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+{% endblock %}
