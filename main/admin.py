@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article,Comments,Messages,Tag,Notice
+from .models import Article,Messages,Tag,Notice
 # Register your models here.
 admin.site.site_header = '天河信息社管理后台'
 admin.site.site_title = '天河信息社管理'
@@ -10,7 +10,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ['pk','title','data_added']
 
 admin.site.register(Article,ArticleAdmin)
-admin.site.register(Comments)
+
 admin.site.register(Messages)
 admin.site.register(Tag)
 admin.site.register(Notice)

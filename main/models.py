@@ -4,6 +4,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
+# 标签
 class Tag(models.Model):
     tags = models.CharField(max_length=10)
     class Meta:
@@ -11,6 +12,8 @@ class Tag(models.Model):
     def __str__(self):
         return self.tags
 
+
+# 首页大图
 class Notice(models.Model):
     notices = models.TextField(max_length=50)
     urls = models.TextField(("图片链接"))
@@ -18,6 +21,7 @@ class Notice(models.Model):
         verbose_name_plural = '首页图片'
     def __str__(self):
         return self.notices
+
 
 class Article(models.Model):
     '''公告模型'''
@@ -37,21 +41,19 @@ class Article(models.Model):
     def __str__(self):
         return f'{self.content[:50]}...'
 
-class Comments(models.Model):
-    '''评论模型'''
-    article = models.ForeignKey(Article,on_delete=models.CASCADE)
-    text = RichTextUploadingField(verbose_name="评论")
-    data_added = models.DateField(verbose_name='发布时间')
-
-    class Meta:
-        verbose_name_plural = '评论'
 
 class Messages(models.Model):
-    name = models.CharField(max_length=10,verbose_name='昵称',blank=True,null=True)
+    username = models.CharField(max_length=10,verbose_name='昵称',blank=True,null=True)
     qq = models.CharField(max_length=12,verbose_name='QQ',blank=True,null=True)
-    messages = RichTextUploadingField(verbose_name='留言',blank=True,null=True)
+    content = RichTextUploadingField(verbose_name='留言',blank=True,null=True)
+    publish=models.DateTimeField()
+    
     class Meta:
         verbose_name_plural = '留言'
+
+    def __str__(self) -> str:
+        tpl = '<Message:[username={username}, content={content}, publish={publish}]>'
+        return tpl.format(username=self.username, content=self.content, publish=self.publish)
 
 
     
